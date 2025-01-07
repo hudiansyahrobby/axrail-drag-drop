@@ -166,7 +166,6 @@ export default function GroupTasks() {
         onDragEnd={handleDragEnd}
         onDragOver={handleDragOver}
       >
-        {/* <div className="flex justify-center my-24 max-w-screen-xl mx-auto gap-4 overflow-auto w-full"> */}
         {columns.map((column, idx) => (
           <GroupItemCard
             key={column.id}
@@ -177,7 +176,6 @@ export default function GroupTasks() {
             variant={getVariant(idx)}
           />
         ))}
-        {/* </div> */}
       </DndContext>
     </div>
   );
