@@ -7,6 +7,7 @@ import {
   useSensors,
   DragEndEvent,
   DragOverEvent,
+  TouchSensor,
 } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import { useCallback, useState } from "react";
@@ -146,6 +147,9 @@ export default function GroupTasks() {
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
+    }),
+    useSensor(TouchSensor, {
+      activationConstraint: undefined,
     })
   );
 
