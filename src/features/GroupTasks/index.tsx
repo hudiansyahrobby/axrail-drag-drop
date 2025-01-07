@@ -159,13 +159,14 @@ export default function GroupTasks() {
   );
 
   return (
-    <DndContext
-      sensors={sensors}
-      collisionDetection={closestCorners}
-      onDragEnd={handleDragEnd}
-      onDragOver={handleDragOver}
-    >
-      <div className="flex justify-center my-24 max-w-screen-xl mx-auto gap-4">
+    <div className="flex p-4 gap-3 max-w-screen-2xl mx-auto py-6 overflow-x-auto 2xl:px-0">
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCorners}
+        onDragEnd={handleDragEnd}
+        onDragOver={handleDragOver}
+      >
+        {/* <div className="flex justify-center my-24 max-w-screen-xl mx-auto gap-4 overflow-auto w-full"> */}
         {columns.map((column, idx) => (
           <GroupItemCard
             key={column.id}
@@ -176,7 +177,8 @@ export default function GroupTasks() {
             variant={getVariant(idx)}
           />
         ))}
-      </div>
-    </DndContext>
+        {/* </div> */}
+      </DndContext>
+    </div>
   );
 }
